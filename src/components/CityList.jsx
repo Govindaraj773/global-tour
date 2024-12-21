@@ -2,8 +2,10 @@ import Spinner from "./Spinner";
 import Message from "./Message";
 import styles from "./CityList.module.css";
 import CityItem from "./CityItem";
+import { useCities } from "../contexts/CitiesContext";
 
-const CityList = ({cities, isLoading}) => {
+const CityList = () => {
+  const {cities, isLoading} = useCities()  //// context api - removing props and importing from context component
 
     if(isLoading) return <Spinner />
 
